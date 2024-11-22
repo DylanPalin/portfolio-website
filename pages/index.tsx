@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Navbar from '@/components/Navbar';
 import Section from '@/components/Section';
+import Projects from '@/components/Projects';
 
 export default function Home() {
   return (
@@ -26,11 +27,7 @@ export default function Home() {
           </ul>
         </Section>
         <Section id="projects" title="Projects">
-          <ul>
-            <li>Project 1: Description</li>
-            <li>Project 2: Description</li>
-            <li>Project 3: Description</li>
-          </ul>
+          <Projects />
         </Section>
         <Section id="socials" title="Links & Socials">
           <ul>
