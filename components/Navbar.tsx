@@ -3,10 +3,10 @@ import React from 'react';
 const Navbar: React.FC = () => {
   return (
     <nav style={styles.navbar}>
-      <a href="#about">About Me</a>
+      <a href="#about">About</a>
+      <a href="#tools">Tools</a>
       <a href="#projects">Projects</a>
-      <a href="#frameworks">Frameworks & Languages</a>
-      <a href="#socials">Links & Socials</a>
+      <a href="#contact">Contact</a>
     </nav>
   );
 };
