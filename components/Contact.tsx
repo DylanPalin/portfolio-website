@@ -7,9 +7,9 @@ export default function Contact() {
       return <p>Thanks for joining!</p>;
   }
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column' }}>
       <label htmlFor="email">
-        Email Address
+        Email Address:
       </label>
       <input
         id="email"
@@ -21,6 +21,9 @@ export default function Contact() {
         field="email"
         errors={state.errors}
       />
+      <label htmlFor="message" style={{ marginTop: '1rem' }}>
+        Message:
+      </label>
       <textarea
         id="message"
         name="message"
@@ -30,7 +33,7 @@ export default function Contact() {
         field="message"
         errors={state.errors}
       />
-      <button type="submit" disabled={state.submitting}>
+      <button type="submit" disabled={state.submitting} style={{ marginTop: '1rem' }}>
         Submit
       </button>
     </form>
