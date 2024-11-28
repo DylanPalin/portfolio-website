@@ -18,7 +18,7 @@ const styles = {
     padding: '1rem',
     backgroundColor: '#333',
     color: '#fff',
-    position: 'sticky' as 'sticky',
+    position: 'sticky' as const,
     top: 0,
     zIndex: 1000,
   },
