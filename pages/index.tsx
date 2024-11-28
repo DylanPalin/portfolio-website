@@ -47,13 +47,13 @@ const styles = {
     padding: '0 2rem',
   },
   footer: {
-    position: 'fixed',
+    position: 'fixed' as const,
     bottom: '2rem', // Adjust the top position as needed
     left: '0',
     width: '3rem', // Adjust the width for your needs
     backgroundColor: 'white',
     padding: '0.01rem 0',
-    textAlign: 'center',
+    textAlign: 'center' as const,
     fontSize: '2rem',
   },
 };
