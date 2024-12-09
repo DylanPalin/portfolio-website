@@ -21,7 +21,9 @@ export default function Home() {
           <p>Hello! I&apos;m Dylan Palin, a web developer passionate about creating modern and user-friendly web applications.</p>
         </Section>
 
+        <Section id="tools" title="Tools">
         <Tools />
+        </Section>
 
         <Section id="projects" title="Projects">
           <Projects />
