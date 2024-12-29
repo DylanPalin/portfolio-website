@@ -8,11 +8,11 @@ import Carousel from "@/components/Carousel";
 import Billboard from "@/components/Billboard";
 import AboutMeContainer from "@/components/AboutMeContainer";
 import Modal from "@/components/Modal";
-import { projects, Project } from "@/components/Projects.tsx"; // Import the projects array and Project type
+import { projects } from "@/components/Projects"; // Import the projects array and Project type
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [modalContent, setModalContent] = useState(null);
+  // const [modalContent, setModalContent] = useState(null);
   // const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   // const handleProjectClick = (project: any) => {
