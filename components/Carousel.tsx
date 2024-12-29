@@ -1,18 +1,46 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 
-export default function Carousel() {
+interface Project {
+  title: string;
+  description: string;
+  image: string;
+}
+
+interface CarouselProps {
+  projects: Project[];
+  onProjectClick: (project: Project) => void;
+}
+
+export default function Carousel({ projects, onProjectClick }: CarouselProps) {
+  const trackRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (trackRef.current) {
+        const scrollPosition = window.scrollY;
+        trackRef.current.style.transform = `translateX(-${scrollPosition}px)`;
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <div className="carouselContainer">
-      <div className="carouselTrack">
-        <img src="/Dylan Hero.jpeg" alt="Image 1" className="carouselImage" />
-        <img src="/Dylan Hero.jpeg" alt="Image 2" className="carouselImage" />
-        <img src="/Dylan Hero.jpeg" alt="Image 3" className="carouselImage" />
-        <img src="/Dylan Hero.jpeg" alt="Image 4" className="carouselImage" />
-        {/* Repeat the images to create the infinite effect */}
-        <img src="/Dylan Hero.jpeg" alt="Image 1" className="carouselImage" />
-        <img src="/Dylan Hero.jpeg" alt="Image 2" className="carouselImage" />
-        <img src="/Dylan Hero.jpeg" alt="Image 3" className="carouselImage" />
-        <img src="/Dylan Hero.jpeg" alt="Image 4" className="carouselImage" />
+      <div className="carouselTrack" ref={trackRef}>
+        {projects.map((project, index) => (
+          <img
+            key={index}
+            src={project.image}
+            alt={project.title}
+            className="carouselImage"
+            onClick={() => onProjectClick(project)}
+          />
+        ))}
       </div>
     </div>
   );

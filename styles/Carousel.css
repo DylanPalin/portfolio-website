@@ -1,25 +1,21 @@
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
 .carouselContainer {
   display: flex;
   overflow: hidden;
   width: 100%;
   position: relative;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
 }
 
 .carouselTrack {
   display: flex;
-  animation: scroll 20s linear infinite;
+  width: calc(200%); /* Adjust this based on the number of images */
+  transition: transform 0.1s linear; /* Smooth transition */
 }
 
 .carouselImage {
   width: 25%;
+  box-shadow: 0px 0px 100px rgba(0, 0, 0, 1); /* Adds a large shadow only on the right side */
   flex-shrink: 0;
+  object-fit: cover; /* Ensures the image is cropped to fit the container */
 }

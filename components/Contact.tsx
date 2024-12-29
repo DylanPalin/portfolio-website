@@ -1,43 +1,86 @@
 import React from 'react';
 import { useForm, ValidationError } from '@formspree/react';
 
+const styles = {
+  form: {
+    display: 'flex',
+    flexDirection: 'column' as const,
+    width: '95%',
+    margin: '0 auto',
+  },
+  input: {
+    opacity: 0.7,
+    minHeight: '3vh',
+  },
+  textarea: {
+    opacity: 0.7,
+    minHeight: '12vh',
+  },
+  label: {
+    marginTop: '.5rem',
+    marginBottom: '.3rem',
+  },
+  button: {
+    marginTop: '1rem',
+    opacity: 1,
+    fontSize: '1rem',
+    maxHeight: '2rem',
+    minHeight: '2rem',
+    width: '6rem',
+    display: 'block',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+  },
+  contactTitle: {
+    display: 'flex',
+    justifyContent: 'center',
+    color: '#fff',
+    fontFamily: 'playfair-display',
+    fontSize: '2rem',
+    margin: '-.2rem',
+  },
+};
+
 export default function Contact() {
   const [state, handleSubmit] = useForm("mldelqdo");
   if (state.succeeded) {
-      return <p>Thanks for joining!</p>;
+    return <p>Talk soon!</p>;
   }
   return (
-    <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', width: '33%', margin: '0 auto', padding: '1rem', borderRadius: '8px', backgroundColor: 'rgba(51, 51, 51, 0.8)' }}>
-      <label htmlFor="email">
+    <div>
+      <h2 style={styles.contactTitle}>Contact</h2>
+    <form onSubmit={handleSubmit} style={styles.form}>
+      <label htmlFor="email" style={styles.label}>
         Email Address:
       </label>
       <input
         id="email"
-        type="email" 
+        type="email"
         name="email"
-        style={{ opacity: 0.7 }}
+        style={styles.input}
       />
-      <ValidationError 
-        prefix="Email" 
+      <ValidationError
+        prefix="Email"
         field="email"
         errors={state.errors}
       />
-      <label htmlFor="message" style={{ marginTop: '1rem' }}>
+      <label htmlFor="message" style={styles.label}>
         Message:
       </label>
       <textarea
         id="message"
         name="message"
-        style={{ opacity: 0.7 }}
+        style={styles.textarea}
       />
-      <ValidationError 
-        prefix="Message" 
+      <ValidationError
+        prefix="Message"
         field="message"
         errors={state.errors}
       />
-      <button type="submit" disabled={state.submitting} style={{ marginTop: '1rem', opacity: 1 }}>
-        Submit
+      <button type="submit" disabled={state.submitting} style={styles.button}>
+        Send
       </button>
     </form>
+    </div>
   );
 }

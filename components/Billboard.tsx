@@ -13,9 +13,9 @@ const Billboard: React.FC = () => {
       width: '100%',
       overflow: 'hidden',
       borderRadius: '1rem',
-      padding: '1rem',
-      paddingTop: '2.2rem',
-      marginTop: '1.2rem',
+      paddingTop: '2rem',
+      marginTop: '1rem',
+      marginBottom: '1rem',
       color: '#fff', // Ensure text color is visible over the video
       boxShadow: '0 0 1rem 1 rgba(0, 0, 0, 0.2)', // Add shadow
     },
@@ -33,6 +33,12 @@ const Billboard: React.FC = () => {
       position: 'relative' as const,
       zIndex: 1,
     },
+    headerText: {
+      fontSize: '3rem',
+      fontWeight: 'bold',
+      textAlign: 'center' as const,
+      fontFamily: 'helvetica',
+    }
   };
 
   return (
@@ -42,6 +48,7 @@ const Billboard: React.FC = () => {
         Your browser does not support the video tag.
       </video>
       <div style={styles.content}>
+        <h1 className="HeaderText" style={styles.headerText}>CLEAN, MODERN, PROFESSIONAL</h1>
         <PagesbyPay />
       </div>
     </div>
