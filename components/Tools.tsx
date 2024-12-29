@@ -63,19 +63,19 @@ const linkStyle = {
   textDecoration: 'none', // Ensures no underline on hover
 };
 
-// Add media queries for responsive sizing
-const responsiveIconStyle = {
-  ...iconStyle,
-  '@media (max-width: 1200px)': {
-    fontSize: '5rem',
-  },
-  '@media (max-width: 992px)': {
-    fontSize: '4rem',
-  },
-  '@media (max-width: 768px)': {
-    fontSize: '3rem',
-  },
-  '@media (max-width: 576px)': {
-    fontSize: '1rem',
-  },
-};
+// // Add media queries for responsive sizing
+// const responsiveIconStyle = {
+//   ...iconStyle,
+//   '@media (max-width: 1200px)': {
+//     fontSize: '5rem',
+//   },
+//   '@media (max-width: 992px)': {
+//     fontSize: '4rem',
+//   },
+//   '@media (max-width: 768px)': {
+//     fontSize: '3rem',
+//   },
+//   '@media (max-width: 576px)': {
+//     fontSize: '1rem',
+//   },
+// };

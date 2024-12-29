@@ -13,16 +13,16 @@ import { projects, Project } from "@/components/Projects.tsx"; // Import the pro
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalContent, setModalContent] = useState(null);
-  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  // const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
-  const handleProjectClick = (project: any) => {
-    setModalContent(project);
-    setIsModalOpen(true);
-  };
+  // const handleProjectClick = (project: any) => {
+  //   setModalContent(project);
+  //   setIsModalOpen(true);
+  // };
 
-  const handleMailClick = () => {
-    setIsModalOpen(true);
-  };
+  // const handleMailClick = () => {
+  //   setIsModalOpen(true);
+  // };
 
   const handleCloseModal = () => {
     setIsModalOpen(false);
