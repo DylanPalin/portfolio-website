@@ -4,34 +4,35 @@ export default function AboutMeContainer() {
   const styles = {
     aboutContainer: {
       display: "flex",
-      flexDirection: "column",
+      flexDirection: "column" as 'row' | 'row-reverse' | 'column' | 'column-reverse',
       alignItems: "center",
       justifyContent: "center",
       padding: "1rem",
+      margin: "1rem",
       backgroundColor: "#333",
       borderRadius: "1rem",
-      maxWidth: "33%",
+      maxWidth: "30%",
     },
     aboutSection: {
       display: "flex",
-      flexDirection: "column",
+      flexDirection: "column" as 'row' | 'row-reverse' | 'column' | 'column-reverse',
       alignItems: "center",
       justifyContent: "center",
-      paddingLeft: "1rem",
-      paddingRight: "1rem",
       fontFamily: "Arial, sans-serif",
+      marginBottom: "-1rem",
     },
-    greeting: {
+    title: {
+      lineHeight: "1.5rem",
       fontSize: "1.5rem",
       color: "#fff",
       fontFamily: "times-new-roman",
-      marginTop: "1rem",
-      marginBottom: "-1.3rem",
+      marginBottom: "-1.5rem",
     },
     aboutImage: {
-      maxWidth: "33%",
-      height: "auto",
-      marginTop: "1rem",
+      width: '100%',
+      height: 'auto',
+      objectFit: 'cover' as const, // Ensures the image covers the container
+      borderRadius: '1rem',
     },
   };
 
@@ -39,20 +40,20 @@ export default function AboutMeContainer() {
     <>
       <div style={styles.aboutContainer}>
         <Image
-          src="/Dylan Left Transparent.png"
+          src="/Personal Photo LinkedIn Banner.png"
           alt="Hero"
           style={styles.aboutImage}
-          width={200}
-          height={200}
+          width={500}
+          height={500}
         />
         <div style={styles.aboutSection}>
-          <p className="greeting" style={styles.greeting}>
+          <p className="title" style={styles.title}>
             WEBMASTER
           </p>
           <br />
           <p>
-            My name is Dylan Palin, and I&apos;m a web developer, music producer, and game content creator. With a strong
-            foundation in front-end and full-stack development, I thrive on
+            Web developer, music producer, and game content creator with a strong
+            foundation in front-end and full-stack development. I thrive on
             turning creative ideas into seamless digital experiences.
           </p>
         </div>

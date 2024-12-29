@@ -14,7 +14,7 @@
 }
 
 .carouselImage {
-  width: 25%;
+  width: 20%;
   box-shadow: 0px 0px 100px rgba(0, 0, 0, 1); /* Adds a large shadow only on the right side */
   flex-shrink: 0;
   object-fit: cover; /* Ensures the image is cropped to fit the container */

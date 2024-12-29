@@ -18,7 +18,7 @@ export default function Home() {
   const handleProjectClick = (project: any) => {
     setModalContent(project);
     setIsModalOpen(true);
-  }
+  };
 
   const handleMailClick = () => {
     setIsModalOpen(true);
@@ -36,27 +36,25 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      
+
       <main style={styles.main}>
         <Navbar />
-
         <div className="mainContainer" style={styles.mainContainer}>
           <Billboard />
-          <Carousel projects={projects} onProjectClick={handleProjectClick} />
-
-        <div className="about" id="about" style={styles.webmasterContactMain}>
-          <AboutMeContainer />
           <Tools />
+          <Carousel projects={projects} onProjectClick={handleProjectClick} />
+          <AboutMeContainer />
         </div>
+      </main>
 
-      </div>
-    </main>
-
-    <footer style={styles.footer}>
-      <Socials onMailClick={() => setIsModalOpen(true)} />
-    </footer>
-
-      <Modal isOpen={isModalOpen} onClose={handleCloseModal} modalContent={modalContent}>
+      <footer style={styles.footer}>
+        <Socials onMailClick={() => setIsModalOpen(true)} />
+      </footer>
+      <Modal
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+        modalContent={modalContent}
+      >
         <Contact />
       </Modal>
     </>
@@ -88,13 +86,5 @@ const styles: { [key: string]: CSSProperties } = {
     minHeight: "100vh",
     paddingLeft: "2rem",
     paddingRight: "2rem",
-  },
-  webmasterContactMain: {
-    display: "flex",
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "center",
-    border: "1px solid red",
-    borderRadius: "1rem",
   },
 };
