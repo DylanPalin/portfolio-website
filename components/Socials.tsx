@@ -1,6 +1,10 @@
 import React from 'react';
 
-export default function Socials({ onMailClick }) {
+interface SocialsProps {
+  onMailClick: () => void;
+}
+
+export default function Socials({ onMailClick }: SocialsProps) {
   return (
     <ul style={{ listStyleType: 'none', padding: 0 }}>
       <li><a href="https://linkedin.com/in/dylanpalin" className="fa fa-linkedin"></a></li>
