@@ -19,7 +19,7 @@ const styles = {
   section: {
     padding: '2rem',
     margin: '2rem 0',
-    borderBottom: '1px solid #ddd',
+    borderBottom: '.8px solid #aaa',
   },
   title: {
     fontSize: '1.5rem',
