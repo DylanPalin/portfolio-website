@@ -2,7 +2,7 @@ export default function PagesbyPay() {
   const styles = {
     pbpContainer: {
       display: 'flex',
-      flexDirection: 'column' as 'column',
+      flexDirection: 'column' as const,
       alignItems: 'center',
       justifyContent: 'center',
       overflow: 'hidden',
