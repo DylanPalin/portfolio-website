@@ -7,7 +7,7 @@ import Socials from "@/components/Socials";
 import Contact from "@/components/Contact";
 import Carousel from "@/components/Carousel";
 import Billboard from "@/components/Billboard";
-import { g } from "motion/react-client";
+import { } from "motion/react-client";
 
 export default function Home() {
   return (
