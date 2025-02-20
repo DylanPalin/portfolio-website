@@ -4,17 +4,11 @@ import ReactDOM from 'react-dom';
 interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
-  project: Project | null;
+  children: React.ReactNode;
 }
 
-interface Project {
-  title: string;
-  description: string;
-  image: string;
-}
-
-const Modal: React.FC<ModalProps> = ({ isOpen, onClose, project }) => {
-  if (!isOpen || !project) return null;
+const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
+  if (!isOpen) return null;
 
   const handleOverlayClick = (e: React.MouseEvent<HTMLDivElement>) => {
     if (e.target === e.currentTarget) {
@@ -25,9 +19,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, project }) => {
   return ReactDOM.createPortal(
     <div style={styles.overlay} onClick={handleOverlayClick}>
       <div style={styles.modal}>
-        <h2>{project.title}</h2>
-        <p>{project.description}</p>
-        <img src={project.image} alt={project.title} style={styles.image} />
+        {children}
       </div>
     </div>,
     document.getElementById('modal-root') as HTMLElement
@@ -50,15 +42,11 @@ const styles: { [key: string]: CSSProperties } = {
     zIndex: 1000,
   },
   modal: {
-    backgroundColor: '#eee',
+    backgroundColor: '#333',
     padding: '2rem',
     borderRadius: '8px',
     maxWidth: '500px',
     width: '100%',
-  },
-  image: {
-    width: '100%',
-    borderRadius: '8px',
   },
 };
 

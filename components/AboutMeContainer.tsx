@@ -11,7 +11,7 @@ export default function AboutMeContainer() {
       margin: "1rem",
       backgroundColor: "#333",
       borderRadius: "1rem",
-      maxWidth: "30%",
+      maxWidth: "60%",
     },
     aboutSection: {
       display: "flex",
@@ -52,9 +52,8 @@ export default function AboutMeContainer() {
           </p>
           <br />
           <p>
-            Web developer, music producer, and game content creator with a strong
-            foundation in front-end and full-stack development. I thrive on
-            turning creative ideas into seamless digital experiences.
+            Web developer, music producer, and content creator with a strong
+            foundation in front-end and full-stack development. Contact me and I can help turn your digital visions into reality!
           </p>
         </div>
       </div>

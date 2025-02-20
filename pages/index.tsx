@@ -8,24 +8,32 @@ import Carousel from "@/components/Carousel";
 import Billboard from "@/components/Billboard";
 import AboutMeContainer from "@/components/AboutMeContainer";
 import Modal from "@/components/Modal";
-import { projects } from "@/components/Projects"; // Import the projects array and Project type
+import { projects } from "@/components/Projects";
+import type { Project } from "@/components/Projects"; 
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  // const [modalContent, setModalContent] = useState(null);
-  // const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [modalContent, setModalContent] = useState<React.ReactNode>(null);
 
-  // const handleProjectClick = (project: any) => {
-  //   setModalContent(project);
-  //   setIsModalOpen(true);
-  // };
+  const handleProjectClick = (project: Project) => {
+    setModalContent(
+      <div>
+        <h2>{project.title}</h2>
+        <p>{project.description}</p>
+        <img src={project.image} alt={project.title} style={styles.image} />
+      </div>
+    );
+    setIsModalOpen(true);
+  };
 
-  // const handleMailClick = () => {
-  //   setIsModalOpen(true);
-  // };
+  const handleMailClick = () => {
+    setModalContent(<Contact />);
+    setIsModalOpen(true);
+  };
 
   const handleCloseModal = () => {
     setIsModalOpen(false);
+    setModalContent(null);
   };
 
   return (
@@ -41,21 +49,20 @@ export default function Home() {
         <Navbar />
         <div className="mainContainer" style={styles.mainContainer}>
           <Billboard />
-          <Tools />
+          <div className="textBorder">
+            <Tools />
+          </div>
           <Carousel projects={projects} onProjectClick={handleProjectClick} />
           <AboutMeContainer />
         </div>
       </main>
 
       <footer style={styles.footer}>
-        <Socials onMailClick={() => setIsModalOpen(true)} />
+        <Socials onMailClick={handleMailClick} />
       </footer>
-      <Modal
-        isOpen={isModalOpen}
-        onClose={handleCloseModal}
-        modalContent={modalContent}
-      >
-        <Contact />
+
+      <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
+        {modalContent}
       </Modal>
     </>
   );
@@ -86,5 +93,9 @@ const styles: { [key: string]: CSSProperties } = {
     minHeight: "100vh",
     paddingLeft: "2rem",
     paddingRight: "2rem",
+  },
+  image: {
+    width: '100%',
+    borderRadius: '8px',
   },
 };
