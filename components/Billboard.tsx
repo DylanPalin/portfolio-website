@@ -13,10 +13,7 @@ const Billboard: React.FC = () => {
       width: '100%',
       overflow: 'hidden',
       borderRadius: '1rem',
-      paddingTop: '1rem',
-      paddingBottom: '1rem',
       marginTop: '1rem',
-      marginBottom: '1rem',
       color: '#fff', // Ensure text color is visible over the video
       boxShadow: '0 0 1rem 1 rgba(0, 0, 0, 0.2)', // Add shadow
     },

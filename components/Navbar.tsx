@@ -17,7 +17,6 @@ const styles = {
     display: 'flex',
     justifyContent: 'flex-start',
     alignItems: 'center',
-    padding: '.4rem',
     backgroundColor: '#333',
     color: '#fff',
     position: 'sticky' as const,
